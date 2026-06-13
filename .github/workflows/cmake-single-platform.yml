@@ -10,10 +10,10 @@ jobs:
     - name: Checkout Code with Submodules
       uses: actions/checkout@v4
       with:
-        submodules: recursive # This ensures Macrium's dependent code blocks are pulled
+        submodules: recursive
 
     - name: Configure CMake
-      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      run: cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
 
     - name: Build Code
       run: cmake --build build --config Release --parallel
@@ -23,5 +23,6 @@ jobs:
       with:
         name: img_to_vhdx-executable
         path: |
-          build/src/Release/img_to_vhdx.exe
+          build/IMG_TO_VHDX/Release/img_to_vhdx.exe
           build/Release/img_to_vhdx.exe
+          build/src/Release/img_to_vhdx.exe
