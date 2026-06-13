@@ -22,7 +22,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: img_to_vhdx-executable
-        path: |
-          build/IMG_TO_VHDX/Release/img_to_vhdx.exe
-          build/Release/img_to_vhdx.exe
-          build/src/Release/img_to_vhdx.exe
+        path: D:/release/img_to_vhdx.exe  # Exact path from your logs
